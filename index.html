@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glass Weather • Vanilla JS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="glass header">
+      <div class="title">🌤️ Glass Weather</div>
+      <div class="search">
+        <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <input id="cityInput" type="text" placeholder="Search city (e.g., Bengaluru)" autocomplete="off" />
+        <div id="suggest" class="suggest"></div>
+      </div>
+      <button id="useLocation" class="badge" title="Use my location">📍 Use location</button>
+    </header>
+
+    <section class="glass card" id="card">
+      <div>
+        <div class="current">
+          <div class="icon-wrap"><img id="wxIcon" alt="weather icon" /></div>
+          <div>
+            <div class="place" id="place">—</div>
+            <div class="temp" id="temp">--°C</div>
+            <div class="cond" id="cond">—</div>
+          </div>
+        </div>
+        <div class="small" id="localtime">—</div>
+      </div>
+
+      <div class="meta">
+        <div class="row"><span>Humidity</span><strong id="humidity">—</strong></div>
+        <div class="row"><span>Wind</span><strong id="wind">—</strong></div>
+        <div class="row"><span>Feels like</span><strong id="feels">—</strong></div>
+        <div class="row"><span>Pressure</span><strong id="pressure">—</strong></div>
+        <div class="row"><span>Visibility</span><strong id="vis">—</strong></div>
+        <div class="row"><span>Cloud</span><strong id="cloud">—</strong></div>
+      </div>
+    </section>
+
+    <footer class="glass footer">
+      <div>Tip: type 2+ letters to see suggestions. ↑/↓ to navigate, Enter to select.</div>
+      <div class="small">Data by WeatherAPI.com</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
