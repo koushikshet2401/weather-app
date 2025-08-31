@@ -138,3 +138,23 @@ els.useLocation.addEventListener('click',()=>{
   if(last){ fetchWeather(last); els.input.value=last; }
   else { fetchWeather('Bengaluru'); els.input.value='Bengaluru, India'; }
 })();
+const themeToggle = document.getElementById('themeToggle');
+
+function applyTheme(theme) {
+  document.body.classList.toggle('dark', theme === 'dark');
+  localStorage.setItem('theme', theme);
+}
+
+function toggleTheme() {
+  const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+
+// Apply saved theme on load
+(function initTheme() {
+  const saved = localStorage.getItem('theme') || 'light';
+  applyTheme(saved);
+})();
